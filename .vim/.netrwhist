@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/justinrhoades/Sites/upcase/regular-expressions-advanced'
+let g:netrw_dirhist_2='/Users/justinrhoades/Sites/upcase/regular-expressions-advanced/lib'
+let g:netrw_dirhist_3='/Users/justinrhoades/Sites/wynd-ops/lib'
