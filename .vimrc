@@ -31,17 +31,18 @@ set number
 set numberwidth=5
 
 set nocompatible
-filetype off
 
 set termguicolors
 syntax on
 colorscheme onedark
 
+filetype off
 set rtp+=~/sites/dotfiles/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-rails'
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'tpope/vim-endwise'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
@@ -49,12 +50,26 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'joshdick/airline-onedark.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'elixir-lang/vim-elixir'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-eunuch'
 
 call vundle#end()
 filetype plugin indent on
 
 let g:airline#extensions#branch#enabled=1
+
+" enable vim/ragtag
+let g:ragtag_global_maps = 1
+
+" The Silver Searcher
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+endif
+
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 imap jj <esc>
 map <Leader>bb :!bundle install<CR>
