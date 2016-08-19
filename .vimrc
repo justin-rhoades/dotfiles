@@ -53,6 +53,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-eunuch'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 filetype plugin indent on
@@ -78,6 +79,10 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
 " line wrapping helo
 nmap k gk
 nmap j gj
