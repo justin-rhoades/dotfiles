@@ -9,6 +9,12 @@ set showcmd
 set incsearch
 set laststatus=2
 set autowrite
+set relativenumber
+
+" Search stuff!
+set complete=.,b,u,]
+set wildmode=longest,list:longest
+set completeopt=menu,preview
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -55,6 +61,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-eunuch'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 filetype plugin indent on
@@ -74,6 +81,7 @@ endif
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 imap jj <esc>
+imap <Tab> <C-P>
 map <Leader>bb :!bundle install<CR>
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
