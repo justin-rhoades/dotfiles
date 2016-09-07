@@ -62,6 +62,7 @@ Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-eunuch'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-dispatch'
 
 call vundle#end()
 filetype plugin indent on
@@ -70,6 +71,8 @@ let g:airline#extensions#branch#enabled=1
 
 " enable vim/ragtag
 let g:ragtag_global_maps = 1
+
+let g:rspec_command = "Dispatch rspec {spec}"
 
 " The Silver Searcher
 if executable('ag')
