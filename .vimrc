@@ -42,6 +42,7 @@ set t_Co=256
 set termguicolors
 syntax on
 colorscheme onedark
+set re=1
 
 filetype off
 set rtp+=~/sites/dotfiles/.vim/bundle/Vundle.vim
@@ -63,6 +64,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-dispatch'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 filetype plugin indent on
