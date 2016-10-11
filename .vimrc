@@ -64,6 +64,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-dispatch'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 filetype plugin indent on
