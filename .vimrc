@@ -42,6 +42,7 @@ set t_Co=256
 set termguicolors
 syntax on
 colorscheme onedark
+set re=1
 
 filetype off
 set rtp+=~/sites/dotfiles/.vim/bundle/Vundle.vim
@@ -72,7 +73,7 @@ let g:airline#extensions#branch#enabled=1
 " enable vim/ragtag
 let g:ragtag_global_maps = 1
 
-let g:rspec_command = "Dispatch rspec {spec}"
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 
 " The Silver Searcher
 if executable('ag')
