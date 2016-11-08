@@ -66,6 +66,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-dispatch'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mxw/vim-jsx'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 filetype plugin indent on
