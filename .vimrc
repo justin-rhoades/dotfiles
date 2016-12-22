@@ -68,6 +68,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'mxw/vim-jsx'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'skalnik/vim-vroom'
 
 call vundle#end()
 filetype plugin indent on
@@ -77,7 +80,17 @@ let g:airline#extensions#branch#enabled=1
 " enable vim/ragtag
 let g:ragtag_global_maps = 1
 
-let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+let g:rspec_command = ":Dispatch rspec {spec}"
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:synatsic_enable_signs = 1
 
 " The Silver Searcher
 if executable('ag')
