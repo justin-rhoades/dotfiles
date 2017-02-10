@@ -34,14 +34,21 @@ set colorcolumn=+1
 
 " numbers!
 set number
-set numberwidth=5
+set numberwidth=4
 
 set nocompatible
 
-set t_Co=256
-set termguicolors
+"if (empty($TMUX))
+"  if (has("nvim"))
+"    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"  endif
+"  if (has("termguicolors"))
+"    set termguicolors
+"  endif
+"endif
+
 syntax on
-colorscheme onedark
+colorscheme minimalist
 set re=1
 
 filetype off
@@ -61,16 +68,16 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-eunuch'
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-commentary'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-dispatch'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'mxw/vim-jsx'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mattn/emmet-vim'
-Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'skalnik/vim-vroom'
+Plugin 'tpope/vim-dispatch'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'dikiaap/minimalist'
 
 call vundle#end()
 filetype plugin indent on
@@ -80,7 +87,9 @@ let g:airline#extensions#branch#enabled=1
 " enable vim/ragtag
 let g:ragtag_global_maps = 1
 
-let g:rspec_command = ":Dispatch rspec {spec}"
+" let g:rspec_command = 'Dispatch rspec {spec}'
+let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
+
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
