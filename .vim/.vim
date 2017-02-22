@@ -1,1 +1,1 @@
-/Users/justinrhoades/.vim
+/Users/justinrhoades/Sites/dotfiles/.vim

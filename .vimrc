@@ -38,18 +38,6 @@ set numberwidth=4
 
 set nocompatible
 
-"if (empty($TMUX))
-"  if (has("nvim"))
-"    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"  endif
-"  if (has("termguicolors"))
-"    set termguicolors
-"  endif
-"endif
-
-syntax on
-colorscheme minimalist
-set re=1
 
 filetype off
 set rtp+=~/sites/dotfiles/.vim/bundle/Vundle.vim
@@ -63,7 +51,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'joshdick/airline-onedark.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-ragtag'
@@ -76,19 +63,32 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-dispatch'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'dikiaap/minimalist'
+Plugin 'rakr/vim-one'
 
 call vundle#end()
 filetype plugin indent on
+
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+syntax on
+set background=light
+colorscheme one
+set re=1
 
 let g:airline#extensions#branch#enabled=1
 
 " enable vim/ragtag
 let g:ragtag_global_maps = 1
 
-" let g:rspec_command = 'Dispatch rspec {spec}'
-let g:rspec_command = "compiler rspec | set makeprg=zeus | Make rspec {spec}"
+let g:rspec_command = 'Dispatch rspec {spec}'
+"let g:rspec_command = 'compiler rspec | set makeprg=zeus | Make rspec {spec}'
 
 
 set statusline+=%#warningmsg#
