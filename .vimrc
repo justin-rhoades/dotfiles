@@ -78,7 +78,7 @@ if (empty($TMUX))
   endif
 endif
 syntax on
-set background=light
+set background=dark
 colorscheme one
 set re=1
 
